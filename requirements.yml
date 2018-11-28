@@ -1,0 +1,3 @@
+- scm: git
+  src: git@github.com:elmariofredo/virgo-upgrade.git
+  version: v0.0
