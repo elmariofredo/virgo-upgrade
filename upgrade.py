@@ -44,7 +44,7 @@ for role in roles:
     new_role = dict(role)
 
     # Get last git tag
-    refs = check_output(["git", "ls-remote", role['src']], encoding="utf-8")
+    refs = check_output(["git", "ls-remote", "--tags", "--sort=v:refname", role['src']], encoding="utf-8")
 
     tags = []
 
