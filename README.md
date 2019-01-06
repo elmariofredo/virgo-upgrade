@@ -6,13 +6,13 @@ Simple python script to upgrade requirements.yml file
 
 ### Check if there are outdated roles
 
-    $ docker run -it -v $HOME/.ssh/id_rsa:/root/.ssh/id_rsa -v $PWD:/ansible elmariofredo/virgo:v0.1 upgrade.py --check
+    $ docker run -it -v $HOME/.ssh/id_rsa:/root/.ssh/id_rsa -v $PWD:/ansible elmariofredo/virgo:v1.0 /upgrade.py --check
     $ echo $?
     1
 
 ### Update outdated roles
 
-    $ docker run -it -v $HOME/.ssh/id_rsa:/root/.ssh/id_rsa -v $PWD:/ansible elmariofredo/virgo:v0.1 upgrade.py
+    $ docker run -it -v $HOME/.ssh/id_rsa:/root/.ssh/id_rsa -v $PWD:/ansible elmariofredo/virgo:v1.0 /upgrade.py
     Writing new role versions to ./requirements.yml
     $ echo $?
     0

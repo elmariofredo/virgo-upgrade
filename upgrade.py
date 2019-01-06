@@ -5,6 +5,19 @@ import yaml
 from subprocess import check_output
 import re
 import sys
+import difflib
+
+def _unidiff_output(expected, actual):
+    """
+    Helper function. Returns a string containing the unified diff of two multiline strings.
+    """
+
+    expected=expected.splitlines(1)
+    actual=actual.splitlines(1)
+
+    diff=difflib.unified_diff(expected, actual)
+
+    return ''.join(diff)
 
 parser = argparse.ArgumentParser(
     description='Check/Upgrade requirements.yml file')
@@ -54,6 +67,8 @@ if old_roles_string != new_roles_string:
         # Fail on version mismatch
 
         print('Outdated role(s) please upgrade')
+
+        print(_unidiff_output(old_roles_string, new_roles_string))
 
         exit(1)
 
