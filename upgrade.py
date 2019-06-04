@@ -52,6 +52,10 @@ for role in roles:
         if "tags" in ref and "^{}" not in ref:
             tags.append(ref)
 
+    if not tags:
+      print('No tags avail able for ' + role['src'] + ' doing nothing')
+      exit(13)
+
     new_role['version'] = re.search('refs/tags/(.+?)$', tags[-1]).group(1)
 
     updated_roles.append(new_role)
