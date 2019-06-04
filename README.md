@@ -2,6 +2,8 @@
 
 Simple python script to upgrade requirements.yml file
 
+Bundled in docker see https://cloud.docker.com/u/elmariofredo/repository/docker/elmariofredo/virgo-upgrade
+
 ## Usage
 
 ### Check if there are outdated roles
