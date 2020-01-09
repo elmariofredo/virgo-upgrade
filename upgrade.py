@@ -35,7 +35,7 @@ requirements_file_path = args.f
 
 requirements_file = open(requirements_file_path, 'r')
 
-roles = yaml.load(requirements_file)
+roles = yaml.safe_load(requirements_file)
 
 updated_roles = []
 
